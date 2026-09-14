@@ -42,6 +42,24 @@ class patternONE {
 
     }
 
+    public void pattern3(int N){
+        for(int i= 1; i<=N; i++){
+             for(int j= 1; j<=i; j++){
+                System.out.print(j+"");
+             }
+           System.out.println();
+        }
+    }
+
+    public void pattern4 (int N){
+        for(int i= 1; i<=N; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print(i+"");
+            }
+        System.out.println();
+        }
+    }
+
 
     public static void main(String[] args){
         patternONE sol = new patternONE();
@@ -50,7 +68,7 @@ class patternONE {
         
         for(int i=0; i<t;i++){
             int N = scan.nextInt() ;
-            sol.pattern2(N);
+            sol.pattern4(N);
         }
        scan.close();
     }
