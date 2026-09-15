@@ -1,7 +1,7 @@
 import java.util.*;
 
 // public class patternON {
-    
+
 //     public static void main (String[] args){
 //         int i = 0;
 //         int j = 0;
@@ -9,7 +9,7 @@ import java.util.*;
 
 //              for (j=0; j<4; j++){
 //                 System.out.print("*");
-        
+
 //             }
 
 //             System.out.println("");
@@ -18,23 +18,21 @@ import java.util.*;
 //     }
 // }
 
-
-
 class patternONE {
 
-    public void pattern1 (int N){
-        for (int i=0; i<N; i++){
-            for(int j=0; j<N; j++){
+    public void pattern1(int N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 System.out.print("*");
             }
 
-          System.out.println();
+            System.out.println();
         }
     }
-    
-    public void pattern2 (int N){
-        for(int i=0; i<N; i++){
-            for(int j=0; j<=i; j++){
+
+    public void pattern2(int N) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -42,34 +40,142 @@ class patternONE {
 
     }
 
-    public void pattern3(int N){
-        for(int i= 1; i<=N; i++){
-             for(int j= 1; j<=i; j++){
-                System.out.print(j+"");
-             }
-           System.out.println();
-        }
-    }
-
-    public void pattern4 (int N){
-        for(int i= 1; i<=N; i++){
-            for(int j=1; j<=i; j++){
-                System.out.print(i+"");
+    public void pattern3(int N) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "");
             }
-        System.out.println();
+            System.out.println();
         }
     }
 
+    public void pattern4(int N) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + "");
+            }
+            System.out.println();
+        }
+    }
 
-    public static void main(String[] args){
+    public void pattern5(int N) {
+
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N - i + 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern6(int N) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N - i + 1; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern7(int N) {
+        for (int i = 0; i < N; i++) {
+            // Space
+            for (int j = 0; j <= N - i - 1; j++) {
+                System.out.print(" ");
+            }
+            // Star
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("*");
+            }
+            // Space
+            for (int j = 0; j <= N - i - 1; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern8(int N) {
+        for (int i = 0; i < N; i++) {
+            // Space
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(" ");
+            }
+            // Star
+            for (int j = 0; j < 2 * N - (2 * i + 1); j++) {
+                System.out.print("*");
+            }
+            // Space
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern9(int N) {
+        pattern7(N);
+        pattern8(N);
+    }
+
+    public void pattern10(int N) {
+        for (int i = 1; i <= 2 * N - 1; i++) {
+            int stars = i;
+            if (i > N)
+                stars = 2 * N - i;
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern11(int N) {
+        int start;
+        for (int i = 0; i < N; i++) {
+            if (i % 2 == 0)
+                start = 1;
+            else
+                start = 0;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(start);
+                start = 1 - start;
+            }
+            System.out.println();
+        }
+
+    }
+
+    public void pattern12(int N) {
+        int space = 2 * (N - 1);
+        for (int i = 1; i <= N; i++) {
+            // Numbers
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            // Space
+            for (int j = 1; j <= space; j++) {
+                System.out.print(" ");
+            }
+            // Numbers
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+            space -= 2;
+        }
+    }
+
+    public static void main(String[] args) {
         patternONE sol = new patternONE();
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
-        
-        for(int i=0; i<t;i++){
-            int N = scan.nextInt() ;
-            sol.pattern4(N);
+
+        for (int i = 0; i < t; i++) {
+            int N = scan.nextInt();
+            sol.pattern12(N);
+
         }
-       scan.close();
+        scan.close();
     }
 }
