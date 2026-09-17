@@ -166,6 +166,47 @@ class patternONE {
         }
     }
 
+    public void pattern13(int N) {
+        int num = 1;
+        for (int i = 1; i<= N; i++) {
+
+            for (int j = 1; j<= i; j++) {
+                System.out.print(num + " ");
+                num = num + 1;
+
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern14(int N) {
+        for(int i=0; i< N; i++ ){
+            for(char ch = 'A'; ch<= 'A' + i; ch++ ){
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public void pattern15(int N) {
+        for(int i=1; i <= N; i++){
+            for(char ch = 'A' ; ch <= 'A' + (N - i);  ch++){
+                System.out.print(ch +" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public void pattern16(int N) {
+        for(int i = 1; i<= N; i++){
+            char ch = (char) ('A' + i - 1);
+            for(int j = 1 ; j <= i ; j++){
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         patternONE sol = new patternONE();
         Scanner scan = new Scanner(System.in);
@@ -173,7 +214,7 @@ class patternONE {
 
         for (int i = 0; i < t; i++) {
             int N = scan.nextInt();
-            sol.pattern12(N);
+            sol.pattern16(N);
 
         }
         scan.close();
