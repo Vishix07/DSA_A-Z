@@ -208,6 +208,36 @@ class patternONE {
     }
 
     public void pattern17(int N) {
+        for(int i = 0; i < N; i++){
+
+             // Print leading spaces
+
+            for(int j = 0; j< N-i-1; j++){
+                System.out.print(" ");
+            }
+
+             // Initialize character to start from 'A'
+
+            char ch = 'A';
+            int Breakpoint = ( 2*i+1 ) / 2;
+             // Print characters in row
+            for(int j = 1; j<= 2*i+1 ; j++){
+                System.out.print(ch );
+             // Increment or decrement character
+                if(j <= Breakpoint) {ch++;}
+                else {ch--;}
+            }
+            
+            // Print trailing spaces
+
+            for(int j = 0; j< N-i-1; j++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern18(int N) {
         for(int i = 0; i <= N; i++){         
             for( char ch = (char)('E' - i) ; ch <= 'E'; ch++){
                 System.out.print(ch + " ");
