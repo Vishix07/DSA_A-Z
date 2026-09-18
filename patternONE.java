@@ -207,6 +207,15 @@ class patternONE {
         }
     }
 
+    public void pattern17(int N) {
+        for(int i = 0; i <= N; i++){         
+            for( char ch = (char)('E' - i) ; ch <= 'E'; ch++){
+                System.out.print(ch + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         patternONE sol = new patternONE();
         Scanner scan = new Scanner(System.in);
@@ -214,7 +223,7 @@ class patternONE {
 
         for (int i = 0; i < t; i++) {
             int N = scan.nextInt();
-            sol.pattern16(N);
+            sol.pattern17(N);
 
         }
         scan.close();
