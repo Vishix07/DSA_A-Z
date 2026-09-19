@@ -246,6 +246,11 @@ class patternONE {
         }
     }
 
+    public void pattern19(int N) {
+       
+    }
+
+
     public static void main(String[] args) {
         patternONE sol = new patternONE();
         Scanner scan = new Scanner(System.in);
