@@ -250,6 +250,10 @@ class patternONE {
        
     }
 
+    public void pattern20(int N) {
+        
+    }
+
 
     public static void main(String[] args) {
         patternONE sol = new patternONE();
