@@ -1,4 +1,5 @@
 import java.util.*;
+import static java.lang.Math.min;
 
 // public class patternON {
 
@@ -300,7 +301,7 @@ class patternONE {
             System.out.print("*");                
             }
         //Spaces
-        for(int j=1; j< spaces; j++){
+        for(int j=0; j< spaces; j++){
             System.out.print(" ");
         }
         //Stars
@@ -313,6 +314,33 @@ class patternONE {
         }
     }
 
+    public void pattern21(int N) {
+        for(int i = 0; i < N; i++){
+            //Stars
+            for(int j = 0; j< N; j++){
+
+                if(i == 0 || j == 0 || i == N-1 || j == N-1){
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }System.out.println();
+        }
+    }
+
+    public void pattern22(int N) {
+        for(int i = 0; i < 2*N - 1; i++){
+            for(int j = 0; j < 2*N - 1; j++){
+                int top = i;
+                int left = j;
+                int right = (2*N - 2) - i;
+                int bottom = (2*N - 2) - j;
+                System.out.print(N - min(min(top,bottom),min(left,right)));
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         patternONE sol = new patternONE();
         Scanner scan = new Scanner(System.in);
@@ -320,7 +348,7 @@ class patternONE {
 
         for (int i = 0; i < t; i++) {
             int N = scan.nextInt();
-            sol.pattern20(N);
+            sol.pattern22(N);
 
         }
         scan.close();
