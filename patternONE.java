@@ -168,9 +168,9 @@ class patternONE {
 
     public void pattern13(int N) {
         int num = 1;
-        for (int i = 1; i<= N; i++) {
+        for (int i = 1; i <= N; i++) {
 
-            for (int j = 1; j<= i; j++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(num + " ");
                 num = num + 1;
 
@@ -180,27 +180,27 @@ class patternONE {
     }
 
     public void pattern14(int N) {
-        for(int i=0; i< N; i++ ){
-            for(char ch = 'A'; ch<= 'A' + i; ch++ ){
+        for (int i = 0; i < N; i++) {
+            for (char ch = 'A'; ch <= 'A' + i; ch++) {
                 System.out.print(ch + " ");
             }
             System.out.println();
         }
     }
-    
+
     public void pattern15(int N) {
-        for(int i=1; i <= N; i++){
-            for(char ch = 'A' ; ch <= 'A' + (N - i);  ch++){
-                System.out.print(ch +" ");
+        for (int i = 1; i <= N; i++) {
+            for (char ch = 'A'; ch <= 'A' + (N - i); ch++) {
+                System.out.print(ch + " ");
             }
             System.out.println();
         }
     }
-    
+
     public void pattern16(int N) {
-        for(int i = 1; i<= N; i++){
+        for (int i = 1; i <= N; i++) {
             char ch = (char) ('A' + i - 1);
-            for(int j = 1 ; j <= i ; j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print(ch);
             }
             System.out.println();
@@ -208,29 +208,32 @@ class patternONE {
     }
 
     public void pattern17(int N) {
-        for(int i = 0; i < N; i++){
+        for (int i = 0; i < N; i++) {
 
-             // Print leading spaces
+            // Print leading spaces
 
-            for(int j = 0; j< N-i-1; j++){
+            for (int j = 0; j < N - i - 1; j++) {
                 System.out.print(" ");
             }
 
-             // Initialize character to start from 'A'
+            // Initialize character to start from 'A'
 
             char ch = 'A';
-            int Breakpoint = ( 2*i+1 ) / 2;
-             // Print characters in row
-            for(int j = 1; j<= 2*i+1 ; j++){
-                System.out.print(ch );
-             // Increment or decrement character
-                if(j <= Breakpoint) {ch++;}
-                else {ch--;}
+            int Breakpoint = (2 * i + 1) / 2;
+            // Print characters in row
+            for (int j = 1; j <= 2 * i + 1; j++) {
+                System.out.print(ch);
+                // Increment or decrement character
+                if (j <= Breakpoint) {
+                    ch++;
+                } else {
+                    ch--;
+                }
             }
-            
+
             // Print trailing spaces
 
-            for(int j = 0; j< N-i-1; j++){
+            for (int j = 0; j < N - i - 1; j++) {
                 System.out.print(" ");
             }
             System.out.println();
@@ -238,8 +241,8 @@ class patternONE {
     }
 
     public void pattern18(int N) {
-        for(int i = 0; i <= N; i++){         
-            for( char ch = (char)('E' - i) ; ch <= 'E'; ch++){
+        for (int i = 0; i <= N; i++) {
+            for (char ch = (char) ('E' - i); ch <= 'E'; ch++) {
                 System.out.print(ch + " ");
             }
             System.out.println();
@@ -247,13 +250,68 @@ class patternONE {
     }
 
     public void pattern19(int N) {
-       
+        int iniS = 0;
+        for (int i = 0; i < N; i++) {
+            // stars
+            for (int j = 0; j < N - i; j++) {
+                System.out.print("*");
+            }
+            // Spaces
+            for (int j = 0; j < iniS; j++) {
+                System.out.print(" ");
+            }
+            // Stars
+            for (int j = 0; j < N - i; j++) {
+                System.out.print("*");
+            }
+            iniS += 2;
+
+            System.out.println();
+        }
+        iniS = 2 * (N - 1);
+        for (int i = 1; i <= N; i++) {
+            // stars
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            // Spaces
+            for (int j = 0; j < iniS; j++) {
+                System.out.print(" ");
+            }
+            // Stars
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            iniS -= 2;
+
+            System.out.println();
+        }
+
     }
 
     public void pattern20(int N) {
+        int spaces = 2*N-2;
         
+        for(int i=1; i<=2*N-1; i++){
+            //Stars
+            int stars = i;
+            if(i > N)stars = 2*N-i;
+        for(int j=1; j<=stars; j++){
+            System.out.print("*");                
+            }
+        //Spaces
+        for(int j=1; j< spaces; j++){
+            System.out.print(" ");
+        }
+        //Stars
+        for(int j=1; j<=stars; j++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        if(i < N)spaces -= 2;
+        else spaces += 2;
+        }
     }
-
 
     public static void main(String[] args) {
         patternONE sol = new patternONE();
@@ -262,7 +320,7 @@ class patternONE {
 
         for (int i = 0; i < t; i++) {
             int N = scan.nextInt();
-            sol.pattern17(N);
+            sol.pattern20(N);
 
         }
         scan.close();
