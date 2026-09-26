@@ -14,8 +14,18 @@ public class maths {
         return cnt;
     }
 
+    public static int reverse(int n) {
+
+        int revNum = 0;
+        while( n > 0) {
+            int id = n % 10;
+            revNum = (revNum * 10) + id;
+            n = n / 10;
+        }
+        return revNum;
+    }
     public static void main(String[] args) {
-        int number = 12345;
-        System.out.println("Digit count: " + count(number));
+        int n = 12345;
+        System.out.println(reverse(n));
     }
 }
