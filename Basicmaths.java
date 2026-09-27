@@ -81,6 +81,24 @@ public class Basicmaths {
         }
     }
 
+    public static void perfectNum(int N) {
+        int total = 1;
+        for(int i = 2; i*i <= N; i++){
+            if( N % i == 0){
+                total += i;
+
+                if((N/i)!= i){
+                    total += (N/i);
+                }       
+            }
+        }
+        if(total == N){
+                    System.out.print("Its an Perfect Number");
+                }else{
+                    System.out.print("Its not an Perfect Number");
+                }
+    }
+
     public static void divisors(int N) {
         for(int i = 1; i <= N; i++){
             if( N % i == 0){
@@ -157,10 +175,11 @@ public class Basicmaths {
         // System.out.print( count(N));
         // System.out.print(odd(N));
         // System.out.print(reverse(N));
-         System.out.print(largedig(N));
+        //  System.out.print(largedig(N));
         // palindrome(N);
         // System.out.println(digit);
         // armstrong(N);
+        perfectNum(N);
         // advdivisors(N);
         // prime(N);
         // gcd(A, B);
