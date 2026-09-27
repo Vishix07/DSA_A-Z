@@ -24,7 +24,7 @@ public class Basicmaths {
         return revNum;
     }
 
-    public static void  palindrome(int N) {
+    public static void palindrome(int N) {
         int revNum = 0;
         int dup = N;
         while (N > 0){
@@ -40,14 +40,32 @@ public class Basicmaths {
         }
 
     }
+
+    public static void armstrong(int N) {
+        int dup = N;
+        int sum = 0;
+        while( N > 0){
+            int id = N % 10;
+            sum = sum + (id * id * id);
+            N  = N / 10;
+        }
+
+        if( dup == sum){
+            System.out.print("The Number is Armstrong");
+        }else{
+            System.out.print("The Number is Not Armstrong");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
         
         // int digit = reverse(N);
-        palindrome(N);
+        // palindrome(N);
         // System.out.println(digit);
+        armstrong(N);
         sc.close();
     }
 }
