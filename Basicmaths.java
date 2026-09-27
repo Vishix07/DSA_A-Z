@@ -13,6 +13,18 @@ public class Basicmaths {
         return cnt;
     }
 
+    public static int odd(int N) {
+        int cnt = 0;
+        while(N > 0){
+            int id = N % 10;
+            if(id % 2 !=0){
+                cnt++;
+            }
+            N = N / 10;
+        }
+        return cnt;
+    } 
+
     public static int reverse(int N) {
 
         int revNum = 0;
@@ -22,6 +34,18 @@ public class Basicmaths {
             N = N / 10;
         }
         return revNum;
+    }
+
+    public static int largedig(int N) {
+        int large = 0;
+        while( N > 0){
+            int id = N % 10;
+            if(id > large){
+                large = id;
+            }
+            N = N / 10;
+        } 
+        return large;
     }
 
     public static void palindrome(int N) {
@@ -124,18 +148,22 @@ public class Basicmaths {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // int N = sc.nextInt();
+        int N = sc.nextInt();
 
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        
-        // int digit = reverse(N);
+        // int A = sc.nextInt();
+        // int B = sc.nextInt();
+
+
+        // System.out.print( count(N));
+        // System.out.print(odd(N));
+        // System.out.print(reverse(N));
+         System.out.print(largedig(N));
         // palindrome(N);
         // System.out.println(digit);
         // armstrong(N);
         // advdivisors(N);
         // prime(N);
-        gcd(A, B);
+        // gcd(A, B);
         sc.close();
     }
 }
