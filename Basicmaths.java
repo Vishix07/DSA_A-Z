@@ -105,17 +105,37 @@ public class Basicmaths {
             System.out.print("Its not an Prime Number");
          }
     }
+    
+    public static void gcd(int A, int B) {
+        while (A > 0 && B > 0) {
+            if(A > B){
+                A = A % B;
+            }else{
+                B = B % A;
+            }
+           
+        }
+         if(A == 0){
+                System.out.print(B);
+            }else{
+               System.out.print(A);
+            }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
+        // int N = sc.nextInt();
+
+        int A = sc.nextInt();
+        int B = sc.nextInt();
         
         // int digit = reverse(N);
         // palindrome(N);
         // System.out.println(digit);
         // armstrong(N);
         // advdivisors(N);
-        prime(N);
+        // prime(N);
+        gcd(A, B);
         sc.close();
     }
 }
