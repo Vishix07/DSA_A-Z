@@ -23,13 +23,31 @@ public class Basicmaths {
         }
         return revNum;
     }
+
+    public static void  palindrome(int N) {
+        int revNum = 0;
+        int dup = N;
+        while (N > 0){
+            int id = N % 10;
+            revNum = (revNum * 10) + id;
+            N = N / 10;
+        }
+
+        if (dup == revNum){
+            System.out.print("The Number is Palindrome");
+        }else{
+            System.out.print("The Number is not Palindrome");
+        }
+
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
         
-        int digitCount = count(N);
-        System.out.println(digitCount);
+        // int digit = reverse(N);
+        palindrome(N);
+        // System.out.println(digit);
         sc.close();
     }
 }
