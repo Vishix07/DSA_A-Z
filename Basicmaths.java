@@ -1,4 +1,4 @@
-import static java.lang.Math.min;
+
 import java.util.*;
 
 public class Basicmaths {
@@ -57,6 +57,38 @@ public class Basicmaths {
         }
     }
 
+    public static void divisors(int N) {
+        for(int i = 1; i <= N; i++){
+            if( N % i == 0){
+                System.out.print(i + " ");
+            }
+            
+        }
+    }
+
+    public static void advdivisors(int N) {
+         List<Integer> ls = new ArrayList<>();
+
+         for(int i = 1; i <= Math.sqrt(N); i++){
+            if(N % i == 0) {
+                ls.add(i);
+
+                if((N / i)!= i){
+                    ls.add(N / i);
+                }
+            }
+         }
+
+         Collections.sort(ls);
+
+         for(int it : ls){
+            System.out.print(it + " ");
+         }
+         System.out.println();
+
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -65,7 +97,8 @@ public class Basicmaths {
         // int digit = reverse(N);
         // palindrome(N);
         // System.out.println(digit);
-        armstrong(N);
+        // armstrong(N);
+        advdivisors(N);
         sc.close();
     }
 }
