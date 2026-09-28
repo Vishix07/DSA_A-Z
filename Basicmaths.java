@@ -148,6 +148,24 @@ public class Basicmaths {
          }
     }
     
+    public static void primetilln(int N) {
+        int cnt = 0;
+        for(int i = 2; i <=  N; i++){
+            int pr = 0;
+            for(int j = 1; j*j <= i; j++){
+                if(i % j == 0){
+                    pr++;
+
+                    if((i/j)!=j){
+                        pr++;
+                    }
+                }
+            } if( pr == 2){
+                cnt++;
+            }
+        } System.out.print(cnt);
+    }
+
     public static void gcd(int A, int B) {
         while (A > 0 && B > 0) {
             if(A > B){
@@ -179,9 +197,10 @@ public class Basicmaths {
         // palindrome(N);
         // System.out.println(digit);
         // armstrong(N);
-        perfectNum(N);
+        // perfectNum(N);
         // advdivisors(N);
         // prime(N);
+        // primetilln(N);
         // gcd(A, B);
         sc.close();
     }
