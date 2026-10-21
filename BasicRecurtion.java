@@ -35,10 +35,17 @@ public class BasicRecurtion {
 
     }
 
+    static void backtrack2(int i, int n){
+        if(i > n) return;
+        backtrack2(i + 1, n);
+        System.out.println(i);
+    }
+
     public static void main(String[] args) {
         // name(1,5);
         // number(1,10);
         // printReverse(10,1);
-        backtrack(10);
+        // backtrack(10);
+        backtrack2(1,10);
     }
 }
