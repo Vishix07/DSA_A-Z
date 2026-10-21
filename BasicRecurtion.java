@@ -28,9 +28,17 @@ public class BasicRecurtion {
         printReverse(i-1,n);
     }
 
+    static void backtrack(int i){
+        if(i < 1) return;
+        backtrack(i - 1);
+        System.out.println(i);
+
+    }
+
     public static void main(String[] args) {
-        name(1,5);
-        number(1,10);
-        printReverse(10,1);
+        // name(1,5);
+        // number(1,10);
+        // printReverse(10,1);
+        backtrack(10);
     }
 }
