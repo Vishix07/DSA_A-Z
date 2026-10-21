@@ -41,11 +41,29 @@ public class BasicRecurtion {
         System.out.println(i);
     }
 
+    static void sum(int n){
+       int total = 0;
+       for(int i = 1; i <= n; i++){
+           total += i;
+       }
+         System.out.println(total);
+    }
+
+    static void factorial(int n){
+        long fact = 1;
+        for(int i = 1; i <= n; i++){
+            fact *= i;
+        }
+        System.out.println(fact);
+    }
+
     public static void main(String[] args) {
         // name(1,5);
         // number(1,10);
         // printReverse(10,1);
         // backtrack(10);
-        backtrack2(1,10);
+        // backtrack2(1,10);
+        // sum(10);
+        factorial(13);
     }
 }
