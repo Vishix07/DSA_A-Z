@@ -41,20 +41,25 @@ public class BasicRecurtion {
         System.out.println(i);
     }
 
-    static void sum(int n){
-       int total = 0;
-       for(int i = 1; i <= n; i++){
-           total += i;
-       }
-         System.out.println(total);
+    static void sum(int i,int n){
+        if(i < 1){
+            System.out.println(n);
+            return;
+        } 
+        sum(i - 1, n + i);
     }
 
-    static void factorial(int n){
-        long fact = 1;
-        for(int i = 1; i <= n; i++){
-            fact *= i;
-        }
-        System.out.println(fact);
+    static int factorial(int n){
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
+            
+        
+    }
+
+    static int sumUsingRecursion(int n){
+        if(n == 0) return 0;
+        return n +  sumUsingRecursion(n - 1);
+       
     }
 
     public static void main(String[] args) {
@@ -63,7 +68,9 @@ public class BasicRecurtion {
         // printReverse(10,1);
         // backtrack(10);
         // backtrack2(1,10);
-        // sum(10);
-        factorial(13);
+        //  sum(5,0);
+        // factorial(13);
+        // System.out.println(sumUsingRecursion(5));
+        System.out.println(factorial(5));
     }
 }
