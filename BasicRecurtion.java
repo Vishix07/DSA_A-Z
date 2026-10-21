@@ -10,7 +10,13 @@ public class BasicRecurtion {
         print();
     }
 
+    static void name(int i, int n){
+        if(i > n) return;
+        System.out.println("VISHI");
+        name(i + 1, n);
+    }
+
     public static void main(String[] args) {
-        print();
+        name(1,5);
     }
 }
