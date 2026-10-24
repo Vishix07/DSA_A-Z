@@ -62,6 +62,38 @@ public class BasicRecurtion {
        
     }
 
+    static void Reverse(int l, int r, int arr[]){
+        
+        if( l >= r) return;
+        int temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+        Reverse(l +1, r - 1, arr);
+    }
+
+    static void Reverse2(int l, int arr2[], int n ){
+        if( l >= n/2) return;
+        int temp = arr2[l];
+        arr2[l] = arr2[n-l-1];
+        arr2[n-l-1] = temp;
+        Reverse2(l + 1, arr2, n);
+    }
+
+    static boolean palindrome(int l, String str){
+        if( l >= str.length()/2) return true;
+        if ( str.charAt(l) != str.charAt(str.length() - l - 1)){
+            return false;
+        }
+        return palindrome(l + 1, str);
+    } 
+
+    static int fibonacci(int n){
+        if( n <= 1) return 1;
+        int last = fibonacci(n - 1);
+        int slast = fibonacci(n - 2);
+        return last + slast;
+    }
+
     public static void main(String[] args) {
         // name(1,5);
         // number(1,10);
@@ -71,6 +103,33 @@ public class BasicRecurtion {
         //  sum(5,0);
         // factorial(13);
         // System.out.println(sumUsingRecursion(5));
-        System.out.println(factorial(5));
+        // System.out.println(factorial(5));
+
+          //Reverse using 2 pointers 
+         
+        // int arr[] = {1,2,3,4,5};
+        // Reverse(0, arr.length - 1, arr);
+        // System.out.println(Arrays.toString(arr));
+
+          // Reverse using 1 pointer
+
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+        // int arr2[] = new int[n];
+
+        // for(int i = 0; i < n; i++){
+        //     arr2[i] = sc.nextInt();
+        // }
+        // Reverse2(0, arr2, n);
+        // System.out.println(Arrays.toString(arr2));
+        // sc.close();
+
+        // String str = "racecar";
+        // System.out.println(palindrome(0, str));
+
+        int n = 25;
+        for( int i = 0; i < n; i++){
+        System.out.println(fibonacci(i));
+        }
     }
 }
