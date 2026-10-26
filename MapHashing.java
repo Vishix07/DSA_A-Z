@@ -36,6 +36,40 @@ public class MapHashing{
         return 0;
     } 
 
+    static int getMaxAndMinFreq(int n, int arr[]){
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        // Count the Frequency
+        for(int i = 0; i < n; i++){
+            map.put( arr[i], map.getOrDefault(arr[i], 0) + 1);
+        }
+
+        int MaxFreq = 0, MinFreq = n;
+        int MaxElement = 0, MinElement = 0;
+
+        for(Map.Entry<Integer, Integer> it : map.entrySet()){
+            int element = it.getKey();
+            int count = it.getValue();
+
+            if(count > MaxFreq){
+                MaxFreq = count;
+                MaxElement = element;
+            }
+
+            if(count < MinFreq){
+                MinFreq = count;
+                MinElement = element;
+
+            }
+        }
+
+        // Print the Max and Min Frequency Elements
+        System.out.println("Max Frequency Element: " + MaxElement + "->" + MaxFreq);
+        System.out.println("Min Frequency Element:" + MinElement + "->" + MinFreq);
+        return 0;
+    }
+
     
 
     public static void main(String[] args ){
@@ -49,6 +83,6 @@ public class MapHashing{
         }
 
         getFrequency(n, arr);
-
+        getMaxAndMinFreq(n, arr);
     }
 }

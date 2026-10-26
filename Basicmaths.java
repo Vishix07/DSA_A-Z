@@ -4,7 +4,7 @@ import java.util.*;
 public class Basicmaths {
     // 1. Added 'int' returN type
     // 2. Used lowercase 'N' coNsisteNtly
-    public static int count(int N) {
+     static int count(int N) {
         int cnt = 0;
         while (N > 0) {
             cnt = cnt + 1;
@@ -13,7 +13,7 @@ public class Basicmaths {
         return cnt;
     }
 
-    public static int odd(int N) {
+     static int odd(int N) {
         int cnt = 0;
         while(N > 0){
             int id = N % 10;
@@ -25,7 +25,7 @@ public class Basicmaths {
         return cnt;
     } 
 
-    public static int reverse(int N) {
+    static int reverse(int N) {
 
         int revNum = 0;
         while( N > 0) {
@@ -36,7 +36,7 @@ public class Basicmaths {
         return revNum;
     }
 
-    public static int largedig(int N) {
+     static int largedig(int N) {
         int large = 0;
         while( N > 0){
             int id = N % 10;
@@ -48,7 +48,7 @@ public class Basicmaths {
         return large;
     }
 
-    public static void palindrome(int N) {
+     static void palindrome(int N) {
         int revNum = 0;
         int dup = N;
         while (N > 0){
@@ -65,7 +65,7 @@ public class Basicmaths {
 
     }
 
-    public static void armstrong(int N) {
+     static void armstrong(int N) {
         int dup = N;
         int sum = 0;
         while( N > 0){
@@ -81,7 +81,7 @@ public class Basicmaths {
         }
     }
 
-    public static void perfectNum(int N) {
+     static void perfectNum(int N) {
         int total = 1;
         for(int i = 2; i*i <= N; i++){
             if( N % i == 0){
@@ -99,7 +99,7 @@ public class Basicmaths {
                 }
     }
 
-    public static void divisors(int N) {
+     static void divisors(int N) {
         for(int i = 1; i <= N; i++){
             if( N % i == 0){
                 System.out.print(i + " ");
@@ -108,7 +108,7 @@ public class Basicmaths {
         }
     }
 
-    public static void advdivisors(int N) {
+     static void advdivisors(int N) {
          List<Integer> ls = new ArrayList<>();
 
          for(int i = 1; i <= Math.sqrt(N); i++){
@@ -131,7 +131,7 @@ public class Basicmaths {
 
     }
 
-    public static void prime(int N) {
+     static void prime(int N) {
         int cnt = 0;
         for(int i = 1; i*i <= N; i++){
          if(N % i == 0){
@@ -146,9 +146,10 @@ public class Basicmaths {
          }else{
             System.out.print("Its not an Prime Number");
          }
-    }
+    } 
+}
     
-    public static void primetilln(int N) {
+     static void primetilln(int N) {
         int cnt = 0;
         for(int i = 2; i <=  N; i++){
             int pr = 0;
@@ -166,7 +167,7 @@ public class Basicmaths {
         } System.out.print(cnt);
     }
 
-    public static void gcd(int A, int B) {
+     static void gcd(int A, int B) {
         while (A > 0 && B > 0) {
             if(A > B){
                 A = A % B;
