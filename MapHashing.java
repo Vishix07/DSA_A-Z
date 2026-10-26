@@ -17,6 +17,12 @@ public class MapHashing{
             value++;
             mp.put(key, value);
         }
+
+        //Iterate Over The Map
+
+        for(Map.Entry<Integer,Integer> it : mp.entrySet()){
+            System.out.println(it.getKey() + "-> " + it.getValue());
+        }
         
         int q = sc.nextInt();
         while(q-- != 0){
@@ -28,7 +34,9 @@ public class MapHashing{
 
         }
         return 0;
-    }
+    } 
+
+    
 
     public static void main(String[] args ){
 
